@@ -20,7 +20,7 @@ UP			=	\033[A
 CUT			=	\033[K
 
 #source files
-SRC_FILES	=	Sapan.cpp main.cpp
+SRC_FILES	=	Span.cpp main.cpp
 
 OBJ_FILES	=	$(SRC_FILES:.cpp=.o)
 

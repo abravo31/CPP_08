@@ -4,6 +4,11 @@
 # include <iostream>
 # include <vector>
 # include <string>
+# include <algorithm>
+# include <limits>
+# include <ctime>
+# include <cstdlib>
+# include <set>
 
 class Span{
     public:

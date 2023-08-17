@@ -1,12 +1,12 @@
 #include "Span.hpp"
 
 //Conctructor
-explicit Span::Span( unsigned int N ) : _maxSize(N){
+Span::Span( unsigned int N ) : _maxSize(N){
     std::cout << "Constructor with unsigned int parameter called" << std::endl;
 }
 
 //Copy constructor
-Span::Span( const Span& copy ) : _elems(copy._elems), _maxSize(copy._maxSize){
+Span::Span( const Span& copy ) : _maxSize(copy._maxSize), _elems(copy._elems){
     std::cout << "Copy Constructor called" << std::endl;
 }
 
@@ -33,6 +33,33 @@ void    Span::addNumber( unsigned int numberToAdd ){
 
 unsigned int    Span::shortestSpan(){
     
+    if (_elems.size() <= 1)
+        throw std::runtime_error("Not enough elements in the Span.");
+    
+    std::vector<int> copy(_elems);
+    std::sort(copy.begin(), copy.end());
+    
+    long shortest = std::numeric_limits<long>::max();
+    for (unsigned int i = 0; i < copy.size() - 1; i++){
+        if ( copy[i + 1] - copy[i] < shortest )
+            shortest = copy[i + 1] - copy[i];
+    }
+    return (static_cast<unsigned int>(shortest));
 }
 
-unsigned int    longestSpan();
+unsigned int    Span::longestSpan(){
+
+    if (_elems.size() <= 1)
+        throw std::runtime_error("Not enough elements in the Span.");
+    
+    std::vector<int> copy(_elems);
+    std::sort(copy.begin(), copy.end());
+    
+    long longest = 0;
+    for (unsigned int i = 0; i < copy.size() - 1; i++){
+        if ( copy[i + 1] - copy[i] > longest )
+            longest = copy[i + 1] - copy[i];
+    }
+    return (static_cast<unsigned int>(longest));
+
+}
