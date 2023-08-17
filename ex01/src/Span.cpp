@@ -55,11 +55,7 @@ unsigned int    Span::longestSpan(){
     std::vector<int> copy(_elems);
     std::sort(copy.begin(), copy.end());
     
-    long longest = 0;
-    for (unsigned int i = 0; i < copy.size() - 1; i++){
-        if ( copy[i + 1] - copy[i] > longest )
-            longest = copy[i + 1] - copy[i];
-    }
+    long longest = *copy.rbegin() - *copy.begin();
     return (static_cast<unsigned int>(longest));
 
 }

@@ -18,7 +18,7 @@ int main(){
     } catch (const std::exception& e) {
         std::cerr << "Exception: " << e.what() << std::endl;
     }
-    
+
     std::cout << std::endl << "-------------------------------------------------------" << std::endl << std::endl;
     try {
         Span span2(15000);
@@ -48,10 +48,11 @@ int main(){
      std::cout << std::endl << "-------------------------------------------------------" << std::endl << std::endl;
     try {
         Span span(5);
-        span.addNumber(10);
-        span.addNumber(20);
-        span.addNumber(5);
-        span.addNumber(25);
+        span.addNumber(6);
+        span.addNumber(3);
+        span.addNumber(17);
+        span.addNumber(9);
+        span.addNumber(11);
 
         std::cout << "Shortest span: " << span.shortestSpan() << std::endl;
         std::cout << "Longest span: " << span.longestSpan() << std::endl;
