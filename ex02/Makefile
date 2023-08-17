@@ -1,4 +1,4 @@
-NAME		=	Span
+NAME		=	Mutant
 
 CC			=	c++
 
@@ -20,7 +20,7 @@ UP			=	\033[A
 CUT			=	\033[K
 
 #source files
-SRC_FILES	=	Span.cpp main.cpp
+SRC_FILES	=	main.cpp
 
 OBJ_FILES	=	$(SRC_FILES:.cpp=.o)
 
@@ -31,10 +31,10 @@ OBJ			=	$(addprefix $(OBJ_DIR), $(OBJ_FILES))
 #all rule
 all: $(NAME)
 	@printf "\n"
-	@printf "$(GREEN)            ___ ___          ___    _____    _     _      ___ ___ \n$(RESET)"
-	@printf "$(GREEN) ___ _ _   |   |_  |     ___|  _|  |    _| _| |_ _| |_   |   | _ |\n$(RESET)"
-	@printf "$(GREEN)| -_|_'_|  | | |_| |_   | . |  _|  |   |_ |_   _|_   _|  | | | _ |\n$(RESET)"
-	@printf "$(GREEN)|___|_,_|  |___|_____|  |___|_|    |_____|  |_|   |_|    |___|___|\n$(RESET)"
+	@printf "$(GREEN)            ___ ___        ___    _____    _     _      ___ ___ \n$(RESET)"
+	@printf "$(GREEN) ___ _ _   |   |_  |   ___|  _|  |    _| _| |_ _| |_   |   | _ |\n$(RESET)"
+	@printf "$(GREEN)| -_|_'_|  | | | __|  | . |  _|  |   |_ |_   _|_   _|  | | | _ |\n$(RESET)"
+	@printf "$(GREEN)|___|_,_|  |___|___|  |___|_|    |_____|  |_|   |_|    |___|___|\n$(RESET)"
 	@printf "$(GREEN)                                                                  \n$(RESET)"
 	@printf "\n"
 
@@ -57,16 +57,16 @@ $(OBJ_DIR)%.o:$(SRC_DIR)%.cpp
 clean:
 	@if [ -d "$(OBJ_DIR)" ]; then \
 	rm -rf $(OBJ_DIR); \
-	echo "$(BLUE)Deleting all objects from /ex00...$(RESET)"; else \
-	echo "No objects to remove from /ex00."; \
+	echo "$(BLUE)Deleting all objects from /ex02...$(RESET)"; else \
+	echo "No objects to remove from /ex02."; \
 	fi;
 
 #fclean rule
 fclean: clean
 	@if [ -f "$(NAME)" ]; then \
 	rm -f $(NAME); \
-	echo "$(BLUE)Deleting $(NAME) from /ex01...$(RESET)"; else \
-	echo "No Executable to remove from /ex01."; \
+	echo "$(BLUE)Deleting $(NAME) from /ex00...$(RESET)"; else \
+	echo "No Executable to remove from /ex00."; \
 	fi;
 
 #re rule
