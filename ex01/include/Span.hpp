@@ -26,6 +26,10 @@ class Span{
         
         // Member function
             void            addNumber( unsigned int numberToAdd );
+
+            template <class InputIterator>
+            void            addRangeIterators( InputIterator first, InputIterator last );
+
             unsigned int    shortestSpan();
             unsigned int    longestSpan();
 
@@ -33,5 +37,13 @@ class Span{
             const unsigned int  _maxSize;
             std::vector<int>    _elems;
 };
+
+template <class InputIterator>
+void    Span::addRangeIterators( InputIterator first, InputIterator last ){
+
+    this->_elems.insert(this->_elems.end(), first, last);
+    if (this->_elems.size() > this->_maxSize)
+        throw std::out_of_range("Maximum number of items reached.");
+}
 
 #endif

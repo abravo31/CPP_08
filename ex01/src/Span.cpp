@@ -31,6 +31,9 @@ void    Span::addNumber( unsigned int numberToAdd ){
     _elems.push_back(numberToAdd);
 }
 
+template <class InputIterator>
+void    Span::addRangeIterators()
+
 unsigned int    Span::shortestSpan(){
     
     if (_elems.size() <= 1)
