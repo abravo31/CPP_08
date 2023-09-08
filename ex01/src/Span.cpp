@@ -1,6 +1,8 @@
 #include "Span.hpp"
 
 //Conctructor
+Span::Span( void ) : _maxSize(0) {}
+
 Span::Span( unsigned int N ) : _maxSize(N){
     std::cout << "Constructor with unsigned int parameter called" << std::endl;
 }
@@ -30,9 +32,6 @@ void    Span::addNumber( unsigned int numberToAdd ){
         throw std::runtime_error("Maximum capacity reached.");
     _elems.push_back(numberToAdd);
 }
-
-template <class InputIterator>
-void    Span::addRangeIterators()
 
 unsigned int    Span::shortestSpan(){
     

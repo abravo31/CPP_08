@@ -13,6 +13,7 @@
 class Span{
     public:
         //Conctructor
+            Span( void );
             explicit Span( unsigned int N );
 
         //Copy constructor

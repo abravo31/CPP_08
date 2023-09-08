@@ -16,11 +16,11 @@ int main(){
                 uniqueNumbers.push_back(num);
             }
         }
-
+        addRangeIterators(uniqueNumbers.begin(), uniqueNumbers.end())
         // Ajout des nombres au Span
-        for (size_t i = 0; i < uniqueNumbers.size(); ++i) {
-            span2.addNumber(uniqueNumbers[i]);
-        }
+        // for (size_t i = 0; i < uniqueNumbers.size(); ++i) {
+        //     span2.addNumber(uniqueNumbers[i]);
+        // }
         std::cout << "Shortest span: " << span2.shortestSpan() << std::endl;
         std::cout << "Longest span: " << span2.longestSpan() << std::endl;
     } catch (const std::exception& e) {
@@ -30,12 +30,15 @@ int main(){
      std::cout << std::endl << "-------------------------------------------------------" << std::endl << std::endl;
     try {
         Span span(5);
-        span.addNumber(6);
-        span.addNumber(3);
-        span.addNumber(17);
-        span.addNumber(9);
-        span.addNumber(11);
+        // span.addNumber(6);
+        // span.addNumber(3);
+        // span.addNumber(17);
+        // span.addNumber(9);
+        // span.addNumber(11);
+        int myarray [] = { 6, 3, 17, 9, 11 };
 
+        srand((unsigned) time(NULL));
+		span.addRange(myarray, myarray + 5);
         std::cout << "Shortest span: " << span.shortestSpan() << std::endl;
         std::cout << "Longest span: " << span.longestSpan() << std::endl;
     } catch (const std::exception& e) {
